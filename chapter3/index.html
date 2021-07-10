@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" type="text/css" href="canvas.css">
+
+  <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        var canvas = $("#myCanvas");
+        var context = canvas.get(0).getContext("2d");
+
+        //context.strokeRect(40, 40, 100, 100);
+
+        //context.beginPath();
+        //context.moveTo(40, 40);
+        //context.lineTo(340, 40);
+        //context.closePath();
+        //context.stroke();
+
+        //var degrees = 1;
+        //var radians = degrees * (Math.PI / 180);
+
+        //context.beginPath();
+        //context.arc(230, 90, 50, Math.PI/2, 3 * Math.PI / 2, false);
+        //context.closePath();
+        //context.fill();
+
+        //context.fillStyle = "rgb(255, 0, 0)";
+        //context.fillRect(40, 40, 100, 100);
+
+        //context.fillStyle = "rgb(255, 0, 0)";
+        //context.fillRect(40, 40, 100, 100);
+        //context.fillRect(180, 40, 100 ,100);
+
+        //context.fillStyle = "rgb(0, 0, 0)";
+        //context.fillRect(320, 40, 100, 100);
+
+        //context.strokeStyle = "rgb(255, 0, 0)";
+        //context.strokeRect(40, 40, 100, 100);
+        //context.strokeRect(180, 40, 100, 100);
+
+        //context.strokeStyle = "rgb(0, 0, 0)";
+        //context.strokeRect(320, 40, 100, 100);
+
+        //context.lineWidth = 5;
+
+        //context.strokeStyle = "rgb(255, 0, 0)";
+        //context.beginPath();
+        //context.moveTo(40, 180);
+        //context.lineTo(420, 180);
+        //context.closePath();
+        //context.stroke();
+
+        //context.lineWidth = 20;,
+
+        //context.strokeStyle = "rgb(0, 0, 0)";
+        //context.beginPath();
+        //context.moveTo(40, 220);
+        //context.lineTo(420, 220);
+        //context.closePath();
+        //context.stroke();
+
+        //var text = "Hello, World!";
+        //context.font = "italic 60px serif";
+
+        //context.strokeText(text, 40, 100);
+
+        //canvas.attr("width", $(window).get(0).innerWidth);
+        //canvas.attr("height", $(window).get(0).innerHeight);
+
+        //context.fillRect(0, 0, canvas.width(), canvas.height());
+
+        $(window).resize(resizeCanvas);
+
+        function resizeCanvas() {
+            canvas.attr("width", $(window).get(0).innerWidth);
+            canvas.attr("height", $(window).get(0).innerHeight);
+            context.fillRect(0, 0, canvas.width(), canvas.height());
+        };
+
+        resizeCanvas();
+    });
+  </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500">
+
+    </canvas>
+</body>
+</html>
