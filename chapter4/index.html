@@ -37,16 +37,112 @@
             //context.transform(2, 0, 0, 2, 150, 150);
             //context.fillRect(0, 0, 100, 100);
 
-            context.setTransform(1, 0, 0, 1, 0, 0);
-            var xScale = Math.cos(0.7854);
-            var yScew = -Math.sin(0.7854);
-            var xScew = Math.sin(0.7854);
-            var yScale = Math.cos(0.7854);
-            var xTrans = 200;
-            var yTrans = 200;
+            //context.setTransform(1, 0, 0, 1, 0, 0);
+            //var xScale = Math.cos(0.7854);
+            //var yScew = -Math.sin(0.7854);
+            //var xScew = Math.sin(0.7854);
+            //var yScale = Math.cos(0.7854);
+            //var xTrans = 200;
+            //var yTrans = 200;
 
-            context.transform(xScale, yScew, xScew, yScale, xTrans, yTrans);
-            context.fillRect(-50, 50, 100, 100);
+            //context.transform(xScale, yScew, xScew, yScale, xTrans, yTrans);
+            //context.fillRect(-50, 50, 100, 100);
+
+            //context.fillStyle = "rgb(63, 169, 245)";
+            //context.fillRect(50, 50, 100, 100);
+
+            //context.globalAlpha = 0.5;
+
+            //context.fillStyle = "rgb(255, 123, 172)";
+            //context.fillRect(100, 100, 100, 100);
+
+            //context.fillStyle = "rgb(63, 169, 245)";
+            //context.fillRect(50, 50, 100, 100);
+
+            //context.globalCompositeOperation = "source-over";
+            //context.globalCompositeOperation = "destination-over";
+
+            //context.fillStyle = "rgb(255, 123, 172)";
+            //context.fillRect(100, 100, 100, 100);
+
+            //context.shadowBlur =  20;
+            //context.shadowColor = "rgb(0, 0, 0)";
+            //context.fillRect(50, 50, 100, 100);
+
+            //context.shadowBlur = 5;
+            //context.shadowOffsetX = 10;
+            //context.shadowOffsetY = 10;
+            //context.shadowColor = "rgba(100, 100, 100, 0.5)";
+            //context.fillRect(200, 50, 100, 100);
+
+            //context.shadowColor = "rgb(255, 0, 0)";
+            //context.shadowBlur = 50;
+            //context.shadowOffsetX = 0;
+            //context.shadowOffsetY = 0;
+            //context.beginPath();
+            //context.arc(400, 100, 50, 0, Math.PI * 2, false);
+            //context.closePath();
+            //context.fill();
+
+            //var gradient = context.createLinearGradient(0, 0, 0, canvas.height());
+            //gradient.addColorStop(0, "rgb(0, 0, 0)");
+            //gradient.addColorStop(1, "rgb(255, 255, 255)");
+
+            //context.fillStyle = gradient;
+            //context.fillRect(0, 0, canvas.width(), canvas.height());
+
+            //var gradient = context.createRadialGradient(300, 300, 10, 100, 100, 50);
+            //gradient.addColorStop(0, "rgb(0, 0, 0)");
+            //gradient.addColorStop(1, "rgb(150, 150, 150)");
+
+            //context.fillStyle = gradient;
+            //context.fillRect(0, 0, canvas.width(), canvas.height());
+
+            //var canvasCenterX = canvas.width()/2;
+            //var canvasCenterY = canvas.height()/2;
+
+            //var gradient = context.createRadialGradient(canvasCenterX, canvasCenterY, 0, canvasCenterX,canvasCenterY, 250);
+            //gradient.addColorStop(0, "rgb(0, 0, 0)");
+            //gradient.addColorStop(1, "rgb(150, 150, 150)");
+
+            //context.fillStyle = gradient;
+            //context.fillRect(0, 0, canvas.width(), canvas.height());
+
+            //context.beginPath();
+            //context.moveTo(100, 50);
+            //context.lineTo(150, 150);
+            //context.lineTo(50, 150);
+            //context.closePath();
+            //context.stroke();
+            //context.fill();
+
+            //context.lineWidth = 5;
+            //context.beginPath();
+            //context.moveTo(50, 250);
+            //context.quadraticCurveTo(250, 100, 450, 250);
+            //context.stroke();
+
+            //context.lineWidth = 5;
+            //context.beginPath();
+            //context.moveTo(50, 250);
+            //context.bezierCurveTo(150, 50, 350, 450, 450, 250);
+            //context.stroke();
+
+            context.save();
+            context.fillRect(50, 50, 100, 100)
+
+            context.fillStyle = "rgb(255, 0, 0)";
+            context.fillRect(100, 100, 100, 100);
+
+            context.restore();
+            context.fillRect(150, 150, 100, 100);
+
+            var dataURL = canvas.get(0).toDataURL();
+
+            var img = $("<img></img");
+            img.attr("src", dataURL);
+
+            canvas.replaceWith(img);
         });
     </script>
 </head>
