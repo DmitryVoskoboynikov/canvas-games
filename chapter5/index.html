@@ -12,21 +12,65 @@
             var canvas = $("#myCanvas");
             var context = canvas.get(0).getContext("2d");
 
-            context.save();
-            context.fillRect(50, 50, 100, 100)
+            //context.shadowBlur = 20;
+            //context.shadowColor = "rgb(0, 0, 0)";
 
-            context.fillStyle = "rgb(255, 0, 0)";
-            context.fillRect(100, 100, 100, 100);
+            //var image = new Image();
+            //image.src = "example.jpg";
 
-            context.restore();
-            context.fillRect(150, 150, 100, 100);
+            //context.drawImage(image, 0, 0, 500, 333);
 
-            var dataURL = canvas.get(0).toDataURL();
+            //top left
+            //context.translate(50, 50);
+            //context.drawImage(image, 0, 0, 500, 500, 0, 0, 200, 200);
 
-            var img = $("<img></img");
-            img.attr("src", dataURL);
+            //bottom left
+            //context.setTransform(1, 0, 0, 1, 0, 0);
+            //context.translate(50, 450);
+            //context.scale(1, -1);
+            //context.drawImage(image, 0, 0, 500, 500, 0, 0, 200, 200);
 
-            canvas.replaceWith(img);
+            // bottom right
+            //context.setTransform(1, 0, 0, 1, 0, 0);
+            //context.translate(450, 450);
+            //context.scale(-1, -1);
+            //context.drawImage(image, 0, 0, 500, 500, 0, 0, 200, 200);
+
+            //top right
+            //context.setTransform(1, 0, 0, 1, 0, 0);
+            //context.translate(450, 50);
+            //context.scale(-1, 1);
+            //context.drawImage(image, 0, 0, 500, 500, 0, 0, 200, 200);
+
+            /**
+            canvas.click(function(e) {
+                var canvasOffset = canvas.offset();
+
+                var canvasX = Math.floor(e.pageX - canvasOffset.left);
+                var canvasY = Math.floor(e.pageY - canvasOffset.top);
+
+                var imageData = context.getImageData(canvasX, canvasY, 1, 1);
+                var pixel = imageData.data;
+                var pixelColor = "rgba(" + pixel[0] + ", " + pixel[1] + ", " + pixel[2] + ", " + pixel[3] + ")";
+
+                $("body").css("backgroundColor", pixelColor);
+            });
+             */
+
+            var imageData = context.createImageData(200, 200);
+            var pixels = imageData.data;
+
+            var numPixels = imageData.width * imageData.height;
+
+            for (var i = 0; i < numPixels; i++) {
+                pixels[i*4] = 255;
+                pixels[i*4+1] = 0;
+                pixels[i*4+2] = 0;
+                pixels[i*4+3] = 255;
+            };
+
+            context.putImageData(imageData, 0, 0)
+
         });
     </script>
 </head>
